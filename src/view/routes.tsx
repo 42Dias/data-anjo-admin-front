@@ -157,6 +157,15 @@ const privateRoutes = [
   },
 
   {
+    path: '/cerimonia/presenca/:id',
+    loader: () =>
+      import('src/view/cerimoniaData/list/CerimoniaDataListPage'),
+    permissionRequired: permissions.cerimoniaDataRead,
+    exact: true,
+  },
+
+
+  {
     path: '/cerimonia/presenca/new',
     loader: () =>
       import('src/view/cerimoniaData/form/CerimoniaDataForm'),
