@@ -228,7 +228,7 @@ function CerimoniaListTable(props) {
                   <td className="td-actions">
                     <Link
                       className="btn btn-link"
-                      to={`/cerimonia/presenca/`}
+                      to={`/cerimonia/presenca/${row.id}`}
                     >
                       {i18n('common.presenca')}
                     </Link>
