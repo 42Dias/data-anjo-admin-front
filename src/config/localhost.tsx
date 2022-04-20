@@ -1,8 +1,8 @@
-const backendUrl = `http://localhost:8143/api`;
+const backendUrl = `https://projetos.42dias.com.br:8143/api`;
 
 // SwaggerUI Documentation URL
 // Leave black if documentation should be hidden
-const apiDocumentationUrl = `http://localhost:8143/documentation`;
+const apiDocumentationUrl = `https://projetos.42dias.com.br:8143/documentation`;
 
 /**
  * Frontend Url.
