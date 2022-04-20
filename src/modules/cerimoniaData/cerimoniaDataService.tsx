@@ -86,8 +86,10 @@ export default class CerimoniaDataService {
 
     const tenantId = AuthCurrentTenant.get();
 
+    let cerimoniaId = window.location.pathname.replace('/cerimonia/presenca/', '')
+    
     const response = await authAxios.get(
-      `/tenant/${tenantId}/cerimoniaData`,
+      `/tenant/${tenantId}/cerimoniaData?filter%5BcerimoniaId%5D=${cerimoniaId}`,
       {
         params,
       },
