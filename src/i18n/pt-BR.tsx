@@ -7,6 +7,7 @@ const ptBR = {
     search: 'Buscar',
     edit: 'Editar',
     new: 'Novo',
+    presenca: 'Presença',
     export: 'Exportar para Excel',
     noDataToExport: 'Não há dados para exportar',
     import: 'Importar',
@@ -145,6 +146,61 @@ const ptBR = {
         importer: {
           title: 'Importar Cerimonias',
           fileName: 'cerimonia_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+      cerimoniaData: {
+        name: 'Lista de Presença',
+        label: 'Lista de Presença',
+        menu: 'Lista de Presença',
+        exporterFileName: 'Presença_exportados',
+        list: {
+          menu: 'Lista de Presença',
+          title: 'Lista de Presença',
+        },
+        create: {
+          success: 'Presença salva com sucesso',
+        },
+        update: {
+          success: 'Presença salva com sucesso',
+        },
+        destroy: {
+          success: 'Presença deletada com sucesso',
+        },
+        destroyAll: {
+          success: 'Presença(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar Lista de Presença',
+        },
+        fields: {
+          id: 'Id',
+          'nome': 'Nome',
+          'email': 'Email',
+          'telefone': 'Telefone',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nova Lista de Presença',
+        },
+        view: {
+          title: 'Visualizar Lista de Presença',
+        },
+        importer: {
+          title: 'Importar Lista de Presença',
+          fileName: 'presenca_template_importacao',
           hint:
             'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
         },

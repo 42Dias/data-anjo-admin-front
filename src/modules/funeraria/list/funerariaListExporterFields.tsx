@@ -3,10 +3,6 @@ import exporterRenders from 'src/modules/shared/exporter/exporterRenders';
 
 export default [
   {
-    name: 'id',
-    label: i18n('entities.funeraria.fields.id'),
-  },
-  {
     name: 'nomeFuneraria',
     label: i18n('entities.funeraria.fields.nomeFuneraria'),
   },
@@ -14,15 +10,5 @@ export default [
     name: 'idCerimonia',
     label: i18n('entities.funeraria.fields.idCerimonia'),
     render: exporterRenders.relationToMany(),
-  },
-  {
-    name: 'createdAt',
-    label: i18n('entities.funeraria.fields.createdAt'),
-    render: exporterRenders.datetime(),
-  },
-  {
-    name: 'updatedAt',
-    label: i18n('entities.funeraria.fields.updatedAt'),
-    render: exporterRenders.datetime(),
-  },
+  }
 ];

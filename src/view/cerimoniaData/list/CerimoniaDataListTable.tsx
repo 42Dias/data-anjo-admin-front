@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import cerimoniaSelectors from 'src/modules/cerimonia/cerimoniaSelectors';
-import destroyActions from 'src/modules/cerimonia/destroy/cerimoniaDestroyActions';
-import destroySelectors from 'src/modules/cerimonia/destroy/cerimoniaDestroySelectors';
-import actions from 'src/modules/cerimonia/list/cerimoniaListActions';
-import selectors from 'src/modules/cerimonia/list/cerimoniaListSelectors';
+import cerimoniaDataSelectors from 'src/modules/cerimoniaData/cerimoniaDataSelectors';
+import destroyActions from 'src/modules/cerimoniaData/destroy/cerimoniaDataDestroyActions';
+import destroySelectors from 'src/modules/cerimoniaData/destroy/cerimoniaDataDestroySelectors';
+import actions from 'src/modules/cerimoniaData/list/cerimoniaDataListActions';
+import selectors from 'src/modules/cerimoniaData/list/cerimoniaDataListSelectors';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
@@ -14,7 +14,7 @@ import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import Pagination from 'src/view/shared/table/Pagination';
 import FunerariaListItem from 'src/view/funeraria/list/FunerariaListItem';
 
-function CerimoniaListTable(props) {
+function CerimoniaDataListTable(props) {
   const [
     recordIdToDestroy,
     setRecordIdToDestroy,
@@ -42,10 +42,10 @@ function CerimoniaListTable(props) {
     selectors.selectIsAllSelected,
   );
   const hasPermissionToEdit = useSelector(
-    cerimoniaSelectors.selectPermissionToEdit,
+    cerimoniaDataSelectors.selectPermissionToEdit,
   );
   const hasPermissionToDestroy = useSelector(
-    cerimoniaSelectors.selectPermissionToDestroy,
+    cerimoniaDataSelectors.selectPermissionToDestroy,
   );
 
   const doOpenDestroyConfirmModal = (id) => {
@@ -117,59 +117,27 @@ function CerimoniaListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'nomeHomenageado'}
+                  name={'nome'}
                   label={i18n(
-                    'entities.cerimonia.fields.nomeHomenageado',
+                    'entities.cerimoniaData.fields.nome',
                   )}
                 />
                 <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'cpf'}
+                  name={'email'}
                   label={i18n(
-                    'entities.cerimonia.fields.cpf',
+                    'entities.cerimoniaData.fields.email',
                   )}
                 />
                 <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'dataCerimonia'}
+                  name={'telefone'}
                   label={i18n(
-                    'entities.cerimonia.fields.dataCerimonia',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'responsavel'}
-                  label={i18n(
-                    'entities.cerimonia.fields.responsavel',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'telefoneResponsavel'}
-                  label={i18n(
-                    'entities.cerimonia.fields.telefoneResponsavel',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'emailResponsavel'}
-                  label={i18n(
-                    'entities.cerimonia.fields.emailResponsavel',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.cerimonia.fields.idFuneraria',
+                    'entities.cerimoniaData.fields.telefone',
                   )}
                 />
               <TableColumnHeader className="th-actions" />
@@ -216,33 +184,20 @@ function CerimoniaListTable(props) {
                       </label>
                     </div>
                   </th>
-                  <td>{row.nomeHomenageado}</td>
-                  <td>{row.cpf}</td>
-                  <td>{row.dataCerimonia}</td>
-                  <td>{row.responsavel}</td>
-                  <td>{row.telefoneResponsavel}</td>
-                  <td>{row.emailResponsavel}</td>
-                  <td>
-                    <FunerariaListItem value={row.idFuneraria} />
-                  </td>
+                  <td>{row.nome}</td>
+                  <td>{row.email}</td>
+                  <td>{row.telefone}</td>
                   <td className="td-actions">
                     <Link
                       className="btn btn-link"
-                      to={`/cerimonia/presenca/`}
-                    >
-                      {i18n('common.presenca')}
-                    </Link>
-
-                    <Link
-                      className="btn btn-link"
-                      to={`/cerimonia/${row.id}`}
+                      to={`/cerimoniaData/${row.id}`}
                     >
                       {i18n('common.view')}
                     </Link>
                     {hasPermissionToEdit && (
                       <Link
                         className="btn btn-link"
-                        to={`/cerimonia/${row.id}/edit`}
+                        to={`/cerimoniaData/${row.id}/edit`}
                       >
                         {i18n('common.edit')}
                       </Link>
@@ -284,4 +239,4 @@ function CerimoniaListTable(props) {
   );
 }
 
-export default CerimoniaListTable;
+export default CerimoniaDataListTable;

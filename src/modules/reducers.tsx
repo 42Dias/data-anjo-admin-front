@@ -8,6 +8,7 @@ import auditLog from 'src/modules/auditLog/auditLogReducers';
 import settings from 'src/modules/settings/settingsReducers';
 import funeraria from 'src/modules/funeraria/funerariaReducers';
 import cerimonia from 'src/modules/cerimonia/cerimoniaReducers';
+import cerimoniaData from 'src/modules/cerimoniaData/cerimoniaDataReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -22,4 +23,5 @@ export default (history) =>
     settings,
     funeraria,
     cerimonia,
+    cerimoniaData
   });

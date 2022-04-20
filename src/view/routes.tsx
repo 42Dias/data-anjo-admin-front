@@ -149,6 +149,38 @@ const privateRoutes = [
     exact: true,
   },
   {
+    path: '/cerimonia/presenca/',
+    loader: () =>
+      import('src/view/cerimoniaData/list/CerimoniaDataListPage'),
+    permissionRequired: permissions.cerimoniaDataRead,
+    exact: true,
+  },
+
+  {
+    path: '/cerimonia/presenca/new',
+    loader: () =>
+      import('src/view/cerimoniaData/form/CerimoniaDataForm'),
+    permissionRequired: permissions.cerimoniaDataCreate,
+    exact: true,
+  },
+
+  {
+    path: '/cerimonia/presenca/edit/:id',
+    loader: () =>
+      import('src/view/cerimoniaData/form/CerimoniaDataForm'),
+    permissionRequired: permissions.cerimoniaDataEdit,
+    exact: true,
+  },
+
+  {
+    path: '/cerimonia/presenca/importer',
+    loader: () =>
+      import('src/view/cerimoniaData/importer/CerimoniaDataImporterPage'),
+    permissionRequired: permissions.cerimoniaDataImport,
+    exact: true,
+  },
+
+  {
     path: '/cerimonia/new',
     loader: () =>
       import('src/view/cerimonia/form/CerimoniaFormPage'),

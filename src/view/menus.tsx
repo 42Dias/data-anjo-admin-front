@@ -54,4 +54,11 @@ export default [
     icon: 'fas fa-chevron-right',
     label: i18n('entities.cerimonia.menu'),
   },  
+
+  // {
+  //   path: '/cerimoniaData',
+  //   permissionRequired: permissions.cerimoniaDataRead,
+  //   icon: 'fas fa-chevron-right',
+  //   label: i18n('entities.cerimoniaData.menu'),
+  // }, 
 ].filter(Boolean);

@@ -33,7 +33,7 @@ const schema = yup.object().shape({
       "required": true
     },
   ),
-  responsavel: yupFormSchemas.string(
+  responsavelNome: yupFormSchemas.string(
     i18n('entities.cerimonia.fields.responsavel'),
     {
       "required": true,
@@ -66,7 +66,7 @@ function CerimoniaForm(props) {
       nomeHomenageado: record.nomeHomenageado,
       cpf: record.cpf,
       dataCerimonia: record.dataCerimonia ? moment(record.dataCerimonia, 'YYYY-MM-DD').toDate() : null,
-      responsavel: record.responsavel,
+      responsavelNome: record.responsavel,
       telefoneResponsavel: record.telefoneResponsavel,
       emailResponsavel: record.emailResponsavel,
       idFuneraria: record.idFuneraria,
@@ -118,7 +118,7 @@ function CerimoniaForm(props) {
             </div>
             <div className="col-lg-7 col-md-8 col-12">
               <InputFormItem
-                name="responsavel"
+                name="responsavelNome"
                 label={i18n('entities.cerimonia.fields.responsavel')}
                 required={true}
               />
