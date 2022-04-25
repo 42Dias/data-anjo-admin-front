@@ -1,3 +1,4 @@
+// const backendUrl = `http://localhost:8143/api`;
 const backendUrl = `https://projetos.42dias.com.br:8143/api`;
 
 // SwaggerUI Documentation URL
@@ -7,9 +8,10 @@ const apiDocumentationUrl = `https://projetos.42dias.com.br:8143/documentation`;
 /**
  * Frontend Url.
  */
+// https://data-anjo-admin.netlify.app
 const frontendUrl = {
-  host: 'localhost:3000',
-  protocol: 'http',
+  host: 'data-anjo-admin.netlify.app',
+  protocol: 'https',
 };
 
 /**
